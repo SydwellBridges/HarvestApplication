@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Harvest</string>
+
+    <string name="soil_information">Warm, moist soil, well-enriched with organic matter. Oranges grafted onto a dwarfing rootstock may be grown in containers.</string>
+    <string name="position_info">A sheltered spot in full sun. In gardens where the temperatures drop below 0 °C grow them in containers that can be moved into a warm, sheltered area during winter.</string>
+    <string name="crop_info">Set out new plants in late winter or early spring. Grow in containers of rich compost to keep plants compact and to make it easy to bring plants indoors for the winter. Good drainage is essential. Prune in spring or summer to shape plants, and watch for thorns. Very sweet oranges need a long season of warm weather, but kumquats, calamondin oranges and satsumas fruit well in marginal areas or when grown in containers.   </string>
+    <string name="harvest_info">Pick when richly coloured and fully ripe. Picking can continue for several weeks as fruits do not ripen all at once. </string>
+
+    <string name="soil_information1">Most soil types but best if its moisture retentive with some dug in compost.</string>
+    <string name="position_info1">In summer, semi-shade, a cool sunny spot or inter-planted between other crops. In winter, full sun</string>
+    <string name="crop_info1">Start sowing in early spring and continue every few weeks for a continuous supply.Early sowings are easily attacked by slugs and snails, so may be best in containers. Thin out to give plenty of room for each plant to grow. In hot summer conditions lettuce can bolt (produce flower heads) and becomes tough and a little bitter.  </string>
+    <string name="harvest_info1">When the heart of the lettuce feels firm pull the whole plant up and cut off the roots. Harvest in the morning when the leaves are cool and full of moisture.\n</string>
+
+    <string name="soil_information2">Rich, deep soil, firm with plenty of well rotted compost dug in</string>
+    <string name="position_information2">Full sun</string>
+    <string name="crop_info2">In areas with cooler summers, cabbage can be sown almost all year round, except for the coldest mid winter months. In areas with hot summers, avoid sowing in the hot mid summer months. Surround stem with a 10cm mat with a slit cut into it for the stem to prevent cabbage root fly from destroying the roots. Use fine mesh or fleece over the summer to prevent butterflies laying eggs on the underside of leaves - caterpillars can destroy these plants. </string>
+    <string name="harvest_info2">Harvest when it has formed a good sized head. Dont leave in the ground for too long otherwise it will split. </string>
+
+    <string name="soil_information3">Rich, moisture retentive soil which has had compost dug in.</string>
+    <string name="position_info3">Sun or partial shade.</string>
+    <string name="crop_info3">Sow under cover in late winter, planting out in early spring. Direct sow from early spring until it becomes too hot. Sow again in late autumn for a winter crop. Keep well watered. Hot or dry conditions can make it bolt (run to seed) which reduces production of usable leaves considerably.</string>
+    <string name="harvest_info3">Pick a few leaves at a time to allow the plant to continue producing more.</string>
+
+    <string name="soil_info4">Corn grows best in loose, well-worked, well-drained soil with a pH of 5.8 to 6.8. Add aged compost to the planting area before planting. Add aged compost to the planting area the autumn before planting..</string>
+    <string name="position_info4">Plant corn in full sun.</string>
+    <string name="crop_info4">Sow corn 1 to 1½ inches deep. Plant seeds 2 to 4 inches apart in short, side-by-side rows to form a block, rather than one long row. Thin plants from 12 to 18 inches apart for short varieties and 18 to 24 inches apart for tall varieties once plants are 4 to 6 inches tall. Corn planted too closely will require more water and fertilizer and may offer a smaller yield. For a continuous harvest, succession plant corn every two weeks or plant early, mid-season, and late varieties at the same time.</string>
+    <string name="harvest_info4">Corn requires from 60 to 100 days to reach harvest depending on the variety and warm weather. Corn is ready for harvest when ears turn dark green, silks turn brown, and kernels are soft and plump; squeeze a kernel and the juice will be milky, not clear. Pick corn by grabbing the ear and giving it a sharp downward twist. Each stalk of corn will produce one or perhaps two harvestable ears of corn. Harvest usually comes about 20 days after the silks appear. Harvest corn in the morning and plunge ears immediately into cold water to preserve sweetness.</string>
+
+    <string name="soil_info5">Rich soil with plenty of compost mixed in before planting.</string>
+    <string name="position_info5">Full sun.</string>
+    <string name="crop_info5">Start seedlings indoors or start with purchased plants. Set out after the last frost has passed, when the soil is warm and settled. Bushy determinate plants can be tied to stakes, but long-bearing indeterminate varieties need a sturdy cage or trellis.</string>
+    <string name="harvest_info5">Pick regularly as soon as the fruits turn color but are still firm. Store at room temperature.</string>
+
+    <string name="soil_info6">Rich soil with plenty of compost added. Often grown in widely spaced enriched hills, or in well-aged compost heaps that include some soil.</string>
+    <string name="position_info6">Full sun.</string>
+    <string name="crop_info6">Sow seeds 1 inch deep in rows, or in hills spaced 6 feet apart. After 2 weeks, thin to 2 plants per hill. If your growing season is short they can be started indoors in pots to get a head start. Fruit size varies with variety. Small watermelons mature quickly and take up less space compared to huge watermelons.</string>
+    <string name="harvest_info6">Ripe watermelons sound deep and resonant when tapped, and the curled tendril opposite the melon should be brown. Wipe clean and store indoors.</string>
+
+    <string name="soil_info7">Sugarcane can grow in various types of soils – sandy, loamy, and clay soils, as well as both acidic and alkaline soils (within the pH range of 5 to 8.5). A well-drained loam with a pH of roughly 6.5 is absolutely ideal, but mechanical factors like soil compaction are much more consequential to crop success than soil composition and pH..</string>
+    <string name="position_info7">Though sugarcane can be cultivated in temperate zones, productivity is much higher in tropical climates. A long, sunny, and hot (32 °C to 38 °C, 90 °F to 100 °F) growing season with moderate to high levels of rainfall (1100 and 1500 mm total), combined with a dry and cooler (12 ˚C to 14 ˚C, 54 °F to 57 °F) harvest season is ideal.</string>
+    <string name="crop_info7">Sugarcane can take between 9-24 months to harvest, depending on the climate. Stalk sections, called “billets,” “setts,” or “seed pieces”- containing one or more buds - are usually planted in late summer, rooting and developing into a stand over winter.</string>
+    <string name="harvest_info7">A cane harvester is used to cut down the full stalks, and cut them into smaller sections (around 30 cm). The harvester is trailed by a cane haulout, which collects the billets..</string>
+    <string name="orange_growing_guide">ORANGE GROWING GUIDE</string>
+
+
+    <string name="link"><a href="https://www.google.pl/">Google</a></string>
+    <string name="heading_string">10 Easy Soil Tests That Pinpoint Your Garden\'s Problems</string>
+    <string name="paragraph1">What\'s the secret to raising healthy, carefree vegetables and flowers? Great soil. How can you tell if your soil has what plants need? A soil test. When you send a soil sample to a lab, you get a detailed analysis of soil nutrients and you find out about deficiencies. That\'s valuable information.
+        \n\nNow you can also assess your soil for even more critical qualities using a system developed by a team of farmers and soil scientists in Oregon. The methods are quite simple and the only supplies you need are a few items commonly found around the house.
+        \n\nThe system is called the Willamette Valley Soil Quality Guide. It was designed with farmers in mind, but it can be used by gardeners in most parts of the country, says Richard Dick, Ph.D., codeveloper of the system and a professor of soil science at Oregon State University.
+        \n\n"The general principles of the test are applicable anywhere, but the specifics will differ," concurs James Walworth, Ph.D., a soil scientist with the University of Arizona\'s Cooperative Extension in Tucson.
+        \n\nScientists warn gardeners not to overemphasize results from one or two steps, but to consider the test as a whole. For instance: "Sandy soil is pretty easy to work," says Mark Williams, Ph.D., an assistant research scientist of soil microbial ecology at the University of Georgia in Athens, Georgia, "but the soil may not have other components of soil quality."
+        \n\nYou should do all ten steps during the active growing weeks in spring, but you can test for soil structure and tilth, compaction, and plant residue year-round. Check various locations in the garden for the broadest picture possible. The more detail you have, the more accurate and reliable the results.
+        \n\n<b>1. Soil Structure and Tilth</b>
+        \n\nWhen the soil is neither too wet nor too dry, dig a hole 6 to 10 inches deep. Separate an intact section about the size of a soup can and break it apart with your fingers. Determine whether the soil is cloddy, powdery, or granular. Ideally, your soil should be made up of different sized crumbs that will hold their shape under slight pressure. Crumbs — or aggregates, as soil scientists call them — that break apart only with difficulty mean your soil is too hard.
+        \n\n<b>Why It\'s Important</b>
+        \n\n"Soil rich in organic matter tends to form relatively round aggregates, which leads to porosity," says Tom Thompson, Ph.D., a professor of soil science, also at the University of Arizona. Open, porous soils allow the free movement of water and oxygen, he explains, so plants can develop strong, healthy roots.
+        \n\n<b>2. Compaction</b>
+        \n\nPlunge a wire flag vertically into the soil at different locations. Mark the depth at which the wire bends. The sooner it bends, the more compacted the soil. A foot or more of easily penetrable soil is ideal.
+        \n\n<b>Why It\'s Important</b>
+        \n\nCompacted soil inhibits root growth and water availability, and keeps earthworms and other vital soil fauna from circulating freely.
+        \n\n<b>3. Workability</b>
+        \n\nYou may have already learned about your soil\'s workability the last time you got the garden ready for planting. If tilling or digging the soil produces cloddy or plate-like clumps, the workability is low. Farmers measure workability by monitoring how much tractor fuel they use; you can simply judge the effort necessary to prepare beds for planting.
+
+    </string>
+    <string name="read_more">Read More..</string>
+    <string name="paragraph2"><b>Why It\'s Important</b>
+        \n\nWorkable soil allows water to reach roots efficiently and it\'s less prone to compaction. Fail this step, and your garden will likely show disappointing results for many of the other tests. "If the soil isn\'t easily worked, other problems have already been going on for a while," says Raymond Allmaras, a soil specialist with the USDA\'s Agricultural Research Service in St. Paul, Minnesota.
+        \n\n<b>4. Soil Organisms</b>
+        \n\nMeasure the animal life in your soil by digging down at least 6 inches and peering intently into the hole for four minutes. Tick off the number and species of each organism observed, such as centipedes, ground beetles, and spiders. Because most soil organisms spurn daylight, gently probe the soil to unearth the more shy residents. If you count less than 10, your soil does not have enough active players in the food chain.
+        \n\n<b>Why It\'s Important</b>
+        \n\nA thriving population of diverse fungi, bacteria, insects, and invertebrates is one of the most visible signs of soil quality. The more that creeps and crawls under your garden, the less opportunity there is for unwelcome pests and disease. Each level of soil life does its part to break down plant residue and make more nutrients available for growth.
+        \n\n<b>5. Earthworms</b>
+        \n\nWhen the soil is not too dry or wet, examine the soil surface for earthworm castings and burrows. Then dig out 6 inches of soil and count the number of earthworms squirming on the shovel. Three worms are good; five are better. The absence of worms means the soil does not have enough of the organic matter they feed on. An exception: If you live in the Southwest, don\'t waste your time looking even if the soil displays other signs of good quality. "Earthworm activity is less likely in the desert," says Walworth. "Worms don't like hot soil."
+
+
+
+
+    </string>
+
+
+</resources>

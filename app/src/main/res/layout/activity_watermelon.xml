@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".cropdata.watermelonActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/headerTV5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WATERMELON GROW GUIDE"
+            android:paddingBottom="15dp"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/typeSoilTv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headerTV5"
+            android:text="SOIL"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/soilInfo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/typeSoilTv5"
+            android:text="@string/soil_info6"
+            android:paddingBottom="15dp"/>
+        <TextView
+            android:id="@+id/ptnTv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/soilInfo5"
+            android:text="POSITION"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/ptnInfo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ptnTv5"
+            android:text="@string/position_info6"
+            android:paddingBottom="15dp"/>
+        <TextView
+            android:id="@+id/sowTv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ptnInfo5"
+            android:text="SOWING AND PLANTING"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/sowInfo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sowTv5"
+            android:text="@string/crop_info6"
+            android:paddingBottom="15dp"/>
+        <TextView
+            android:id="@+id/hvTv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sowInfo5"
+            android:text="HARVESTING"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/hvTvInfo5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hvTv5"
+            android:text="@string/harvest_info6"/>
+
+        <TextView
+            android:id="@+id/infoMore8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLICK HERE FOR MORE INFO!"
+            android:textColor="@color/green"
+            android:layout_below="@id/hvTvInfo5"
+            />
+
+        <WebView
+            android:id="@+id/webview_player_view8"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/infoMore8"/>
+
+
+    </RelativeLayout>
+</ScrollView>

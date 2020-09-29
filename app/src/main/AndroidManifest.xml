@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.harvest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".navigate.readMoreActivity"></activity>
+        <activity android:name=".cropdata.orangesActivity" />
+        <activity android:name=".cropdata.watermelonActivity" />
+        <activity android:name=".cropdata.sugarcaneActivity" />
+        <activity android:name=".cropdata.tomatoesActivity" />
+        <activity android:name=".cropdata.lettuceActivity" />
+        <activity android:name=".cropdata.spinachActivity" />
+        <activity android:name=".cropdata.maizeActivity" />
+        <activity android:name=".cropdata.cabbageActivity" />
+        <activity android:name=".navigate.SurveySecondActivity" />
+        <activity android:name=".loginregister.ForgotPassActivity" />
+        <activity android:name=".navigate.HelpActivity" />
+        <activity android:name=".navigate.WeatherActivity" />
+        <activity android:name=".navigate.CropsActivity" />
+        <activity android:name=".navigate.SurveyResultsActivity" />
+        <activity android:name=".navigate.SoiltestActivity" />
+        <activity android:name=".navigate.LandmarkActivity" />
+        <activity android:name=".navigate.SurveyAcivity" />
+        <activity android:name=".dashboard.MainMenuScreen" />
+        <activity android:name=".loginregister.Registration" />
+        <activity android:name=".loginregister.Login" />
+        <activity android:name=".loginregister.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
