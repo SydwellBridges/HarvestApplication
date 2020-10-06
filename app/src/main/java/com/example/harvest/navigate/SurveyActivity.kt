@@ -52,21 +52,19 @@ class SurveyActivity : AppCompatActivity() {
 
         val location = areaLocation.text.toString().trim()
         val size = areaSize.text.toString().toInt()
-
         val dry = Dry.text.toString().trim()
         val wet = Wet.text.toString().trim()
         val average = Average.text.toString().trim()
-
         val yes = Yes.text.toString().trim()
         val no = No.text.toString().trim()
-
-        val shade = textShade.toString().trim()
+        val shade = textShade.text.toString().trim()
 
         if(location.isEmpty()){
 
             areaLocation.error = "Please enter location"
             return
         }
+
         if(shade.isEmpty()){
 
             textShade.error = "Please enter shade type"
@@ -74,63 +72,21 @@ class SurveyActivity : AppCompatActivity() {
         }
 
 
+        // Database reference object
+        val ref = FirebaseDatabase.getInstance().getReference("Survey")
 
-        val myDataBase = FirebaseDatabase.getInstance().getReference("Survey")
-        val surveyId = myDataBase.push().key
-        //val survey = Survey(surveyId, location, size, dry, wet, average, yes, no, shade) }
+        // create new node inside survey node - push() - generates a new key inside Survey node
+        val surveyId = ref.push().key
 
-        myDataBase.child("id").setValue(surveyId)
-        myDataBase.child("location").setValue(areaLocation)
-        myDataBase.child("size").setValue(areaSize)
-        //myDataBase.child("dry").setValue(Dry)
-        //myDataBase.child("wet").setValue(Wet)
-        //myDataBase.child("average").setValue(Average)
-        //myDataBase.child("yes").setValue(Yes)
-        //myDataBase.child("no").setValue(No)
-        myDataBase.child("shade").setValue(textShade)
+        // create a survey object
+        val survey = surveyId?.let { Survey(it, location, size, dry, wet, average, yes, no, shade) }
 
-        // Radio group for the type of land
-        radioGroupLand.setOnCheckedChangeListener{ group, checkedId ->
+        if (surveyId != null) {
+            ref.child(surveyId).setValue(survey).addOnCompleteListener{
 
-            if(checkedId == R.id.Dry)
-            {
-                Toast.makeText(this, Dry.text.toString(), Toast.LENGTH_SHORT).show()
-                myDataBase.child("dry").setValue(Dry)
-
-            }
-
-            if(checkedId == R.id.Wet)
-            {
-                Toast.makeText(this, Wet.text.toString(), Toast.LENGTH_SHORT).show()
-                myDataBase.child("wet").setValue(Wet)
-
-            }
-
-            if(checkedId == R.id.Average)
-            {
-                Toast.makeText(this, Average.text.toString(), Toast.LENGTH_SHORT).show()
-                myDataBase.child("average").setValue(Average)
+                Toast.makeText(this, "Data Saved", Toast.LENGTH_SHORT).show()
             }
         }
-
-        // Radio group for the drought
-        radioGroupDrought.setOnCheckedChangeListener{ group, checkedId ->
-
-            if(checkedId == R.id.Yes)
-            {
-                Toast.makeText(this, Yes.text.toString(), Toast.LENGTH_SHORT).show()
-                myDataBase.child("yes").setValue(Yes)
-
-            }
-
-            if(checkedId == R.id.No)
-            {
-                Toast.makeText(this, No.text.toString(), Toast.LENGTH_SHORT).show()
-                myDataBase.child("no").setValue(No)
-            }
-        }
-
 
     }
-
 }

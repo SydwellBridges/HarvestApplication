@@ -147,7 +147,7 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:hint="Specify any shade(hills, tress, buildings etc.)"
+        android:hint="@string/specify_any_shade"
         android:inputType="textPersonName"
         android:textColorHint="#15A51B"
         app:layout_constraintEnd_toEndOf="parent"
