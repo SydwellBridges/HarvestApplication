@@ -26,7 +26,7 @@ class MainMenuScreen : AppCompatActivity() {
         // Access the Survey activity
         survey.setOnClickListener{
 
-            startActivity(Intent(this, SurveyAcivity::class.java))
+            startActivity(Intent(this, SurveyActivity::class.java))
         }
 
         // Access the Performance Activity

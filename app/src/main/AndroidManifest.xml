@@ -27,8 +27,7 @@
         <activity android:name=".navigate.CropsActivity" />
         <activity android:name=".navigate.SurveyResultsActivity" />
         <activity android:name=".navigate.SoiltestActivity" />
-        <activity android:name=".navigate.LandmarkActivity" />
-        <activity android:name=".navigate.SurveyAcivity" />
+        <activity android:name=".navigate.SurveyActivity" />
         <activity android:name=".dashboard.MainMenuScreen" />
         <activity android:name=".loginregister.Registration" />
         <activity android:name=".loginregister.Login" />

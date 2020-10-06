@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:152349529029:android:32e88146857374238cb1ac",
+        "mobilesdk_app_id": "1:152349529029:android:03a37b0075c45c228cb1ac",
         "android_client_info": {
           "package_name": "com.example.harvest"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "152349529029-1lat8l0btapm9qdi3uat49ak0b20as8m.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.harvest",
-            "certificate_hash": "3038b48e1120b49b97ddcaa6413d05ffef8e4461"
-          }
-        },
         {
           "client_id": "152349529029-1ghuchmis0ptsmhonnsiib85e9mqqs1c.apps.googleusercontent.com",
           "client_type": 3
