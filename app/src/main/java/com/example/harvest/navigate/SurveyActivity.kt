@@ -59,6 +59,53 @@ class SurveyActivity : AppCompatActivity() {
         val no = No.text.toString().trim()
         val shade = textShade.text.toString().trim()
 
+
+        var landType = ""
+        var drought = ""
+
+        // Radio group for the type of land
+        radioGroupLand.setOnCheckedChangeListener{ group, checkedId ->
+
+            if(checkedId == R.id.Dry)
+            {
+                Toast.makeText(this, Dry.text.toString(), Toast.LENGTH_SHORT).show()
+                landType = Dry.text.toString().trim()
+
+            }
+
+            if(checkedId == R.id.Wet)
+            {
+                Toast.makeText(this, Wet.text.toString(), Toast.LENGTH_SHORT).show()
+                landType = Wet.text.toString().trim()
+
+            }
+
+            if(checkedId == R.id.Average)
+            {
+                Toast.makeText(this, Average.text.toString(), Toast.LENGTH_SHORT).show()
+                landType = Average.text.toString().trim()
+
+            }
+
+        }
+
+        // Radio group for the drought
+        radioGroupDrought.setOnCheckedChangeListener{ group, checkedId ->
+
+            if(checkedId == R.id.Yes)
+            {
+                Toast.makeText(this, Yes.text.toString(), Toast.LENGTH_SHORT).show()
+                drought = Yes.text.toString().trim()
+            }
+
+            if(checkedId == R.id.No)
+            {
+                Toast.makeText(this, No.text.toString(), Toast.LENGTH_SHORT).show()
+                drought = No.text.toString().trim()
+            }
+
+        }
+
         if(location.isEmpty()){
 
             areaLocation.error = "Please enter location"
@@ -79,7 +126,7 @@ class SurveyActivity : AppCompatActivity() {
         val surveyId = ref.push().key
 
         // create a survey object
-        val survey = surveyId?.let { Survey(it, location, size, dry, wet, average, yes, no, shade) }
+        val survey = surveyId?.let { Survey(it, location, size, landType, drought, shade) }
 
         if (surveyId != null) {
             ref.child(surveyId).setValue(survey).addOnCompleteListener{
