@@ -13,14 +13,10 @@ class SurveyActivity : AppCompatActivity() {
 
     lateinit var areaLocation : EditText
     lateinit var areaSize : EditText
+    lateinit var typeOfLand : EditText
+    lateinit var typeOfSlope : EditText
+    lateinit var accessDistance : EditText
     lateinit var textShade : EditText
-    lateinit var radioGroupLand : RadioGroup
-    lateinit var Dry: RadioButton
-    lateinit var Wet: RadioButton
-    lateinit var Average: RadioButton
-    lateinit var radioGroupDrought : RadioGroup
-    lateinit var Yes: RadioButton
-    lateinit var No: RadioButton
     lateinit var SaveButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +25,9 @@ class SurveyActivity : AppCompatActivity() {
 
         areaLocation = findViewById(R.id.areaLocation)
         areaSize = findViewById(R.id.areaSize)
-        radioGroupLand = findViewById(R.id.radioGroupLand)
-        Dry = findViewById(R.id.Dry)
-        Wet = findViewById(R.id.Wet)
-        Average = findViewById(R.id.Average)
-        radioGroupDrought = findViewById(R.id.radioGroupDrought)
-        Yes = findViewById(R.id.Yes)
-        No = findViewById(R.id.No)
+        typeOfLand = findViewById(R.id.landType)
+        typeOfSlope = findViewById(R.id.slopeType)
+        accessDistance = findViewById(R.id.roadDistance)
         textShade = findViewById(R.id.editTextShade)
         SaveButton = findViewById(R.id.SavButton)
 
@@ -52,59 +44,10 @@ class SurveyActivity : AppCompatActivity() {
 
         val location = areaLocation.text.toString().trim()
         val size = areaSize.text.toString().toInt()
-        val dry = Dry.text.toString().trim()
-        val wet = Wet.text.toString().trim()
-        val average = Average.text.toString().trim()
-        val yes = Yes.text.toString().trim()
-        val no = No.text.toString().trim()
+        val land = typeOfLand.text.toString().trim()
+        val slope = typeOfSlope.text.toString().trim()
+        val distanceRoad = accessDistance.text.toString().trim()
         val shade = textShade.text.toString().trim()
-
-
-        var landType = ""
-        var drought = ""
-
-        // Radio group for the type of land
-        radioGroupLand.setOnCheckedChangeListener{ group, checkedId ->
-
-            if(checkedId == R.id.Dry)
-            {
-                Toast.makeText(this, Dry.text.toString(), Toast.LENGTH_SHORT).show()
-                landType = Dry.text.toString().trim()
-
-            }
-
-            if(checkedId == R.id.Wet)
-            {
-                Toast.makeText(this, Wet.text.toString(), Toast.LENGTH_SHORT).show()
-                landType = Wet.text.toString().trim()
-
-            }
-
-            if(checkedId == R.id.Average)
-            {
-                Toast.makeText(this, Average.text.toString(), Toast.LENGTH_SHORT).show()
-                landType = Average.text.toString().trim()
-
-            }
-
-        }
-
-        // Radio group for the drought
-        radioGroupDrought.setOnCheckedChangeListener{ group, checkedId ->
-
-            if(checkedId == R.id.Yes)
-            {
-                Toast.makeText(this, Yes.text.toString(), Toast.LENGTH_SHORT).show()
-                drought = Yes.text.toString().trim()
-            }
-
-            if(checkedId == R.id.No)
-            {
-                Toast.makeText(this, No.text.toString(), Toast.LENGTH_SHORT).show()
-                drought = No.text.toString().trim()
-            }
-
-        }
 
         if(location.isEmpty()){
 
@@ -120,13 +63,13 @@ class SurveyActivity : AppCompatActivity() {
 
 
         // Database reference object
-        val ref = FirebaseDatabase.getInstance().getReference("Survey")
+        val ref = FirebaseDatabase.getInstance().getReference("Land Properties")
 
         // create new node inside survey node - push() - generates a new key inside Survey node
         val surveyId = ref.push().key
 
         // create a survey object
-        val survey = surveyId?.let { Survey(it, location, size, landType, drought, shade) }
+        val survey = surveyId?.let { Survey(it, location, size, land, slope, distanceRoad, shade) }
 
         if (surveyId != null) {
             ref.child(surveyId).setValue(survey).addOnCompleteListener{
