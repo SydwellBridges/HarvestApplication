@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.harvest.R
 import com.google.firebase.database.FirebaseDatabase
+import org.w3c.dom.Text
 
 class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val surveyList : List<Survey>) : ArrayAdapter<Survey>(mCtx,layoutId,surveyList){
 
@@ -24,21 +25,33 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
         val distanceRoad = view.findViewById<TextView>(R.id.textViewDistance)
         val shade =  view.findViewById<TextView>(R.id.textViewShade)
 
+        val soiltype = view.findViewById<TextView>(R.id.textViewSoilType)
+        val phlevel = view.findViewById<TextView>(R.id.textViewPHLevel)
+        val soiltexture = view.findViewById<TextView>(R.id.textViewSoilTexture)
+        val soilcolour = view.findViewById<TextView>(R.id.textViewSoilColour)
+        val soilPorosity = view.findViewById<TextView>(R.id.textViewSoilPorosity)
+
         val updateBtn = view.findViewById<Button>(R.id.buttonUpdate)
         val deleteBtn = view.findViewById<Button>(R.id.buttonDelete)
 
         val survey = surveyList[position]
 
-        location.text = survey.location
-        size.text = survey.size.toString()
-        land.text = survey.land
-        slope.text = survey.slope
-        distanceRoad.text = survey.distance.toString()
-        shade.text = survey.shade
+        location.text = "Location: " + survey.location
+        size.text = "Area Size:" + survey.size.toString()
+        land.text = "Land Type: " + survey.land
+        slope.text = "Slope Type: " + survey.slope
+        distanceRoad.text = "Distance from access: " + survey.distance.toString()
+        shade.text = "Shade Type: "+ survey.shade
 
-        updateBtn.setOnClickListener {
+        soiltype.text = "Soil Type: " + survey.soiltype
+        phlevel.text = "pH Level: " + survey.phlevel.toString()
+        soiltexture.text = "Soil Texture:  " + survey.soiltexture
+        soilcolour.text = "Soil Colour: " + survey.soilcolour
+        soilPorosity.text = "Soil Porosity: " + survey.soilPorosity
+
+        /*updateBtn.setOnClickListener {
             updateInfo(survey)
-        }
+        }*/
 
         deleteBtn.setOnClickListener{
             deleteInfo(survey)
@@ -47,7 +60,7 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
         return view
     }
 
-    private fun updateInfo(survey : Survey)
+    /*private fun updateInfo(survey : Survey)
     {
         val builder = AlertDialog.Builder(mCtx)
         builder.setTitle("Update Info")
@@ -104,7 +117,7 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
         val alert = builder.create()
         alert.show()
 
-    }
+    }*/
 
     private fun deleteInfo(survey : Survey){
         val myDatabase = FirebaseDatabase.getInstance().getReference("Land Properties")
