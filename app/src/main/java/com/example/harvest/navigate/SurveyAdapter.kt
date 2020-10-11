@@ -10,7 +10,7 @@ import android.widget.*
 import com.example.harvest.R
 import com.google.firebase.database.FirebaseDatabase
 
-class SurveyAdapter(val mCtx : Context, val layoutId : Int , val surveyList : List<Survey>) : ArrayAdapter<Survey>(mCtx,layoutId,surveyList){
+class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val surveyList : List<Survey>) : ArrayAdapter<Survey>(mCtx,layoutId,surveyList){
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
@@ -33,7 +33,7 @@ class SurveyAdapter(val mCtx : Context, val layoutId : Int , val surveyList : Li
         size.text = survey.size.toString()
         land.text = survey.land
         slope.text = survey.slope
-        distanceRoad.text = survey.distance
+        distanceRoad.text = survey.distance.toString()
         shade.text = survey.shade
 
         updateBtn.setOnClickListener {
@@ -62,10 +62,10 @@ class SurveyAdapter(val mCtx : Context, val layoutId : Int , val surveyList : Li
         val shade =  view.findViewById<EditText>(R.id.shadeUpdate)
 
         location.setText(survey.location)
-        size.setText(survey.size)
+        size.setText(survey.size.toString())
         land.setText(survey.land)
         slope.setText(survey.slope)
-        distanceRoad.setText(survey.distance)
+        distanceRoad.setText(survey.distance.toString())
         shade.setText(survey.shade)
 
         builder.setView(view)
@@ -79,8 +79,8 @@ class SurveyAdapter(val mCtx : Context, val layoutId : Int , val surveyList : Li
                 val size2 = size.text.toString().toInt()
                 val land3 = land.text.toString().trim()
                 val slope4 = slope.text.toString().trim()
-                val distanceRoad5 = distanceRoad.toString().trim()
-                val shade6 = shade.toString().trim()
+                val distanceRoad5 = distanceRoad.text.toString().toInt()
+                val shade6 = shade.text.toString().trim()
 
                 if(location1.isEmpty()){
                     location.error = "Please enter location"
@@ -88,7 +88,7 @@ class SurveyAdapter(val mCtx : Context, val layoutId : Int , val surveyList : Li
                 }
 
                 val survey = Survey(survey.id, location1, size2, land3, slope4, distanceRoad5, shade6)
-                myDatabase.child(survey.id).setValue(survey)
+                survey.id?.let { myDatabase.child(it).setValue(survey) }
                     Toast.makeText(mCtx, "Updated", Toast.LENGTH_LONG).show()
 
             }
@@ -108,10 +108,8 @@ class SurveyAdapter(val mCtx : Context, val layoutId : Int , val surveyList : Li
 
     private fun deleteInfo(survey : Survey){
         val myDatabase = FirebaseDatabase.getInstance().getReference("Land Properties")
-        myDatabase.child(survey.id).removeValue()
+        survey.id?.let { myDatabase.child(it).removeValue() }
         Toast.makeText(mCtx,"Deleted !",Toast.LENGTH_LONG).show()
     }
-
-
 
 }

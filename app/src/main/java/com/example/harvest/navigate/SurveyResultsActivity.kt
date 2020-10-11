@@ -26,7 +26,8 @@ class SurveyResultsActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                if(p0.exists())
+
+                if(p0!!.exists())
                 {
                     surveyList.clear()
 
@@ -42,7 +43,6 @@ class SurveyResultsActivity : AppCompatActivity() {
             }
 
         })
-
 
     }
 }

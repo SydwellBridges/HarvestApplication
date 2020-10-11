@@ -1,7 +1,8 @@
 package com.example.harvest.navigate
 
-data class Survey (var id: String, var location: String, var size: Int, var land: String,
-                   var slope: String, var distance: String, var shade: String){
+data class Survey(val id: String ?= "", val location: String ?= "", val size: Int ?= 0, val land: String ?= "",
+             val slope: String ?= "", val distance: Int ?= 0, val shade: String ?= ""){
 
+    constructor():this( "","", 0, "", "", 0, ""){}
 
 }

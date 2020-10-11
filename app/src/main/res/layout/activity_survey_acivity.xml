@@ -130,7 +130,7 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textColorHint="#15A51B"
         android:hint="Dinstance from access road"
         app:layout_constraintEnd_toEndOf="parent"

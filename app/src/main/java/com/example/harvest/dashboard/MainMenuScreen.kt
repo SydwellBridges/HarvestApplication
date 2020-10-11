@@ -65,6 +65,7 @@ class MainMenuScreen : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this@MainMenuScreen, Login::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

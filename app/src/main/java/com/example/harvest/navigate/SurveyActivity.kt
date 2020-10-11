@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import com.example.harvest.R
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_survey_acivity.*
 
 class SurveyActivity : AppCompatActivity() {
 
@@ -35,7 +33,8 @@ class SurveyActivity : AppCompatActivity() {
         SaveButton.setOnClickListener {
 
             saveSurvey()
-            startActivity(Intent(this, SurveySecondActivity::class.java))
+            startActivity(Intent(this, SurveyResultsActivity::class.java))
+            //startActivity(Intent(this, SurveySecondActivity::class.java))
 
         }
     }
@@ -46,7 +45,7 @@ class SurveyActivity : AppCompatActivity() {
         val size = areaSize.text.toString().toInt()
         val land = typeOfLand.text.toString().trim()
         val slope = typeOfSlope.text.toString().trim()
-        val distanceRoad = accessDistance.text.toString().trim()
+        val distanceRoad = accessDistance.text.toString().toInt()
         val shade = textShade.text.toString().trim()
 
         if(location.isEmpty()){
