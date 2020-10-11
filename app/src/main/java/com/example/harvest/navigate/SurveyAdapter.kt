@@ -49,9 +49,9 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
         soilcolour.text = "Soil Colour: " + survey.soilcolour
         soilPorosity.text = "Soil Porosity: " + survey.soilPorosity
 
-        /*updateBtn.setOnClickListener {
+        updateBtn.setOnClickListener {
             updateInfo(survey)
-        }*/
+        }
 
         deleteBtn.setOnClickListener{
             deleteInfo(survey)
@@ -60,7 +60,7 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
         return view
     }
 
-    /*private fun updateInfo(survey : Survey)
+    private fun updateInfo(survey : Survey)
     {
         val builder = AlertDialog.Builder(mCtx)
         builder.setTitle("Update Info")
@@ -74,12 +74,24 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
         val distanceRoad = view.findViewById<EditText>(R.id.distanceUpdate)
         val shade =  view.findViewById<EditText>(R.id.shadeUpdate)
 
+        val soiltype = view.findViewById<EditText>(R.id.updateSoilType)
+        val phlevel = view.findViewById<EditText>(R.id.updatePHLevel)
+        val soiltexture = view.findViewById<EditText>(R.id.updateSoilTexture)
+        val soilcolour = view.findViewById<EditText>(R.id.updateSoilColour)
+        val soilPorosity = view.findViewById<EditText>(R.id.updateSoilPorosity)
+
         location.setText(survey.location)
         size.setText(survey.size.toString())
         land.setText(survey.land)
         slope.setText(survey.slope)
         distanceRoad.setText(survey.distance.toString())
         shade.setText(survey.shade)
+
+        soiltype.setText(survey.soiltype)
+        phlevel.setText(survey.phlevel.toString())
+        soiltexture.setText(survey.soiltexture)
+        soilcolour.setText(survey.soilcolour)
+        soilPorosity.setText(survey.soilPorosity)
 
         builder.setView(view)
 
@@ -95,12 +107,18 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
                 val distanceRoad5 = distanceRoad.text.toString().toInt()
                 val shade6 = shade.text.toString().trim()
 
+                val soiltype7 = soiltype.text.toString()
+                val phlevel8 = phlevel.text.toString().toInt()
+                val soiltexture9 = soiltexture.text.toString()
+                val soilcolour10 = soilcolour.text.toString()
+                val soilPorosity11 = soilPorosity.text.toString()
+
                 if(location1.isEmpty()){
                     location.error = "Please enter location"
                     return
                 }
 
-                val survey = Survey(survey.id, location1, size2, land3, slope4, distanceRoad5, shade6)
+                val survey = Survey(survey.id, location1, size2, land3, slope4, distanceRoad5, shade6, soiltype7, phlevel8, soiltexture9, soilcolour10, soilPorosity11)
                 survey.id?.let { myDatabase.child(it).setValue(survey) }
                     Toast.makeText(mCtx, "Updated", Toast.LENGTH_LONG).show()
 
@@ -117,7 +135,7 @@ class SurveyAdapter(val mCtx : Context, private val layoutId : Int, private val 
         val alert = builder.create()
         alert.show()
 
-    }*/
+    }
 
     private fun deleteInfo(survey : Survey){
         val myDatabase = FirebaseDatabase.getInstance().getReference("Land Properties")

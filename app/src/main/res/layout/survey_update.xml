@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="30dp">
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
     <EditText
         android:id="@+id/locationUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:ems="10"
         android:hint="Enter Area Location"
         android:inputType="textPersonName"
@@ -24,7 +28,7 @@
         android:id="@+id/areaSizeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:ems="10"
         android:hint="Enter Area Size (hectors)"
         android:inputType="number"
@@ -38,7 +42,7 @@
         android:id="@+id/landTypeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:ems="10"
         android:hint="Land type (Wet, Dry or Average)"
         android:inputType="textPersonName"
@@ -51,7 +55,7 @@
         android:id="@+id/slopeTypeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:ems="10"
         android:hint="Slope type"
         android:inputType="textPersonName"
@@ -64,7 +68,7 @@
         android:id="@+id/distanceUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:ems="10"
         android:hint="Dinstance from access road"
         android:inputType="textPersonName"
@@ -77,7 +81,7 @@
         android:id="@+id/shadeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:ems="10"
         android:hint="@string/specify_any_shade"
         android:inputType="textPersonName"
@@ -86,4 +90,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/distanceUpdate" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/updateSoilType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Soil type (Sandy, Clay or Silt)"
+        android:textColorHint="#15A51B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shadeUpdate" />
+
+    <EditText
+        android:id="@+id/updatePHLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="What is the soil PH level?"
+        android:textColorHint="#15A51B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateSoilType" />
+
+    <EditText
+        android:id="@+id/updateSoilTexture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Soil texture"
+        android:textColorHint="#15A51B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updatePHLevel" />
+
+    <EditText
+        android:id="@+id/updateSoilColour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Soil colour"
+        android:textColorHint="#15A51B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateSoilTexture" />
+
+    <EditText
+        android:id="@+id/updateSoilPorosity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Soil porosity(Good, average or bad)"
+        android:textColorHint="#15A51B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateSoilColour"
+        app:layout_constraintVertical_bias="0.028" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

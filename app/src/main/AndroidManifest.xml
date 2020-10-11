@@ -20,7 +20,6 @@
         <activity android:name=".cropdata.spinachActivity" />
         <activity android:name=".cropdata.maizeActivity" />
         <activity android:name=".cropdata.cabbageActivity" />
-        <activity android:name=".navigate.SurveySecondActivity" />
         <activity android:name=".loginregister.ForgotPassActivity" />
         <activity android:name=".navigate.HelpActivity" />
         <activity android:name=".navigate.WeatherActivity" />

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import com.example.harvest.R
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_survey_second.*
+
 
 class SurveyActivity : AppCompatActivity() {
 
@@ -82,7 +82,7 @@ class SurveyActivity : AppCompatActivity() {
 
         if(soiltype.isEmpty())
         {
-            soilType.error = "Please enter a soil type"
+            typeSoil.error = "Please enter a soil type"
             return
         }
 
