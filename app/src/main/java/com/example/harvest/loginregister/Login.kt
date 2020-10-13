@@ -3,6 +3,7 @@ package com.example.harvest.loginregister
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -59,6 +60,8 @@ class Login : AppCompatActivity() {
     // Login the user to Main Menu
     private fun performLogin(){
 
+        Log.d("Login", "Attempting to login with email and password")
+
         val email = editTextEmailAddressLogin.text.toString()
         val password = editTextPasswordLogin.text.toString()
 
@@ -88,15 +91,6 @@ class Login : AppCompatActivity() {
                 }
             }
     }
-
-
-    // check if user is currently signed in or not signed in
-    /*public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        updateUI(currentUser)
-    }*/
 
     private fun updateUI(currentUser : FirebaseUser?){
 
