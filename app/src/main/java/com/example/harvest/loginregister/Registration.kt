@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.harvest.R
 import com.example.harvest.dashboard.MainMenuScreen
+import com.example.harvest.navigate.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -177,5 +178,3 @@ class Registration : AppCompatActivity() {
     }
 
 }
-
-class User(val uid: String, val name: String, val email: String, val phoneNumber: String, val profileImageUrl: String)
