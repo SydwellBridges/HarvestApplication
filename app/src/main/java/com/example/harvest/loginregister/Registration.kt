@@ -16,8 +16,11 @@ import com.example.harvest.dashboard.MainMenuScreen
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_registration.*
+import java.util.*
 
 class Registration : AppCompatActivity() {
 
@@ -69,8 +72,12 @@ class Registration : AppCompatActivity() {
 
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoUri)
 
-            val bitmapDrawable = BitmapDrawable(bitmap)
-            selectphotoButtonRegister.setBackgroundDrawable(bitmapDrawable)
+            selectPhotoImageView.setImageBitmap(bitmap)
+
+            selectphotoButtonRegister.alpha = 0f
+
+          //  val bitmapDrawable = BitmapDrawable(bitmap)
+          //  selectphotoButtonRegister.setBackgroundDrawable(bitmapDrawable)
         }
     }
 
@@ -107,11 +114,13 @@ class Registration : AppCompatActivity() {
 
                     val user = Firebase.auth.currentUser
 
+                    uploadImageToFirebaseStorage()
+
                     // verify user email
                     user!!.sendEmailVerification()
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
-                                    Log.d("verify email", "Email sent.")
+                                    Log.d("Registration", "Email sent.")
                                 }
                             }
 
@@ -127,5 +136,46 @@ class Registration : AppCompatActivity() {
             }
     }
 
+    private fun uploadImageToFirebaseStorage(){
+
+        if (selectedPhotoUri == null) return
+
+        val filename = UUID.randomUUID().toString()
+        val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
+
+        ref.putFile(selectedPhotoUri!!)
+            .addOnSuccessListener {
+                Log.d("Registration", "Successfully uploaded image: ${it.metadata?.path}")
+
+                // access to the file location
+                ref.downloadUrl.addOnSuccessListener {
+                    Log.d("Registration", "File Location: $it")
+
+                    saveUserToFirebaseDatabase(it.toString())
+                }
+            }
+            .addOnFailureListener {
+                Log.d("Registration", "Failed to upload image to storage: ${it.message}")
+            }
+    }
+
+    private fun saveUserToFirebaseDatabase(profileImageUrl: String){
+
+        val name = editTextName.text.toString()
+        val email = editTextTextEmailAddress.text.toString()
+        val phone = editTextPhone.text.toString()
+
+        // User id
+        val uid = FirebaseAuth.getInstance().uid ?: ""
+        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+
+        val user = User(uid, name, email, phone, profileImageUrl)
+
+        ref.setValue(user).addOnSuccessListener {
+            Log.d("Registration", "Finally we saved the user to Firebase Database")
+        }
+    }
 
 }
+
+class User(val uid: String, val name: String, val email: String, val phoneNumber: String, val profileImageUrl: String)
